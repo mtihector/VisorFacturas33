@@ -1,0 +1,861 @@
+﻿<nav class="navbar navbar-default navbar-fixed-top">
+	<div class="container" >
+		<button id="btnopen" class="btn btn-primary">Abrir otra factura</button>
+		<button id="btnPrint" class="btn btn-primary">Imprimir</button>
+	</div>
+</nav>
+
+{{#comprobante}}
+{{#$}} 
+<div class="container" style="margin-top:10px">
+	<h1>Generales Version 3.3  </h1>
+	<!-- <div class="row"> -->
+	<!-- <div class="col-lg-12"> -->
+	<!-- <label>Version:</label>3.3 -->
+	<!-- </div> -->
+	<!-- </div> -->
+	
+	<div class="row"> 
+		<div class="col-lg-12">
+			<label>Tipo de comprobante: </label>{{tipodecomprobante}}
+		</div>
+	</div> 
+
+	<div class="row">
+		<div class="col-lg-12">
+			<label>Serie:</label>{{serie}}
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-12">
+			<label>Folio:</label>{{folio}}
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-12">
+			<label>Forma de Pago:</label>{{formapago}}
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-12">
+			<label>Metodo de Pago:</label>{{metodopago}}
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-12">
+			<label>Lugar de Expedición:</label>{{lugarexpedicion}}
+		</div>
+	</div>
+
+</div>
+	{{/$}} 
+{{/comprobante}}
+{{#comprobante}}
+<div class="container">
+{{#emisor}}
+{{#$}} 
+	<h1>Emisor: {{nombre}}</h1>
+
+	<div class="row">
+		<div class="col-lg-12">
+			<label>RFC:</label>{{rfc}}
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-12">
+			<label>Nombre:</label>{{nombre}}
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-12">
+			<label>RegimenFiscal:</label>{{regimenfiscal}}
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-12">
+			<label>En la versión 3.3 ya no trae domicilio fiscal y tampoco el detalle donde fue expedido, solo el código postal en el campo "Lugar de Expedición</label>
+		</div>
+	</div>
+
+{{/$}}
+
+{{/emisor}}
+</div>
+
+
+
+{{#receptor}}
+
+<div class="container">
+  {{#$}} 
+	<h1>Receptor: {{nombre}}</h1>
+
+	<div class="row">
+		<div class="col-lg-12">
+			<label>RFC:</label>{{rfc}}
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-12">
+			<label>Residencia Fiscal :</label>{{residenciafiscal}}
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-12">
+			<label>NoRegIdTrib  :</label>{{numregidtrib}}
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-12">
+			<label>Uso de CFDI :</label>{{usocfdi}}
+		</div>
+	</div>
+
+
+
+  {{/$}}
+
+
+
+
+	<div class="row">
+		<div class="col-lg-12">
+			<label>La versión 3.3 ya no trae los datos del domicilio</label>
+
+		</div>
+	</div>
+
+
+</div>
+
+{{/receptor}}
+
+
+
+{{#cfdirelacionados}}
+
+<div class="container">
+
+	<h1>CFDI Relacionados</h1>
+{{#$}} 
+	<div class="row">
+		<div class="col-lg-12">
+			<label>TipoRelacion :</label>{{tiporelacion}}
+		</div>
+	</div>
+		{{/$}}
+	{{#cfdirelacionado}}
+	{{#$}} 
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<label>UUID :</label>{{uuid}}
+			</div>
+		</div>
+	</div>
+{{/$}} 
+	{{/cfdirelacionado}}
+</div>
+
+{{/cfdirelacionados}}
+
+{{#complemento}}
+<div class="container">
+  {{#timbrefiscaldigital}}
+  {{#$}}
+
+	<h2>Timbre</h2>
+	<div class="row">
+		<div class="col-lg-12">
+			<label>UUID:</label> {{uuid}}
+		</div>
+		<div class="col-lg-12">
+			<label>No. Certificado SAT:</label> {{nocertificadosat}}
+		</div>
+		<div class="col-lg-12">
+			<label>Fecha Timbrado:</label> {{fechatimbrado}}
+		</div>
+
+
+	</div>
+
+
+  {{/$}}
+
+  {{/timbrefiscaldigital}}
+
+</div>
+
+{{/complemento}}
+
+
+{{#$}}
+<div class="container">
+
+	<h2>Conceptos</h2>
+
+</div>
+
+{{/$}}
+
+
+
+<div class="container">
+	<table class="table table-bordered">
+		<tr>
+			<th>
+	Clave SAT
+			</th>
+			<th> 
+	NoIdentificacion
+			</th>
+			<th> 
+	ClaveUnidad
+			</th>
+			<th> 
+	Unidad
+			</th>
+			<th> 
+	Cantidad
+			</th>
+			<th> 
+	ValorUnitario
+			</th>
+			<th> 
+	Importe
+			</th>
+			<th> 
+	Descuento
+			</th>
+
+			<th> 
+	Impuestos
+			</th>
+			<th> 
+	Descripcion
+			</th>
+
+
+		</tr>
+
+    {{#conceptos}}
+
+    {{#concepto}}
+    {{#$}}
+
+		<tr>
+
+
+			<td > 
+	{{claveprodserv}}
+			</td>
+			<td> 
+	{{noidentificacion}}
+			</td>
+			<td> 
+	{{claveunidad}}
+			</td>
+			<td> 
+	{{unidad}}
+			</td>
+			<td> 
+	{{cantidad}}
+			</td>
+			<td> 
+	{{valorunitario}}
+			</td>
+			<td> 
+	{{importe}}
+			</td>
+			<td> 
+	{{descuento}}
+			</td>
+			<td> 
+	{{#impuestos}}
+		{{#traslados}}
+				<span>Trasladados:</span> 
+			{{#traslado}}
+			{{#$}}
+				<br/>
+				<span>Impuesto:  {{impuesto}} </span>
+				<br/>
+				<span>TF :{{tipofactor}}  </span>
+				<br/>
+				<span>T/C: {{tasaocuota}} </span>
+				<br/>
+				<span>Base : {{base}} </span>
+				<br/>
+				<span>Importe: {{importe}}</span>
+			{{/$}}
+			{{/traslado}}
+		{{/traslados}}
+
+
+		{{#retenciones}}
+				<span>Retenciones:</span> 
+			{{#retencion}}
+			{{#$}}
+				<br/>
+				<span>Impuesto:  {{impuesto}} </span>
+				<br/>
+				<span>TF :{{tipofactor}}  </span>
+				<br/>
+				<span>T/C: {{tasaocuota}} </span>
+				<br/>
+				<span>Base : {{base}} </span>
+				<br/>
+				<span>Importe: {{importe}}</span>
+			{{/$}}
+			{{/retencion}}
+		{{/retenciones}}
+
+	{{/impuestos}}
+			</td>
+			<td> 
+	{{descripcion}}
+			</td>				
+		</tr>
+
+
+    {{/$}}
+    {{/concepto}}
+
+    {{/conceptos}}
+
+
+	</table>
+</div>
+
+
+
+<div class="container">
+
+
+	<h2>Totales</h2>
+
+
+  {{#$}}
+
+
+	<div class="row">
+		<div class="col-sm-2">      
+			<label>Tipo Cambio:  </label>
+		</div>
+		<div class="col-sm-2">
+      {{tipocambio}}      
+		</div>
+
+	</div>
+
+	<div class="row">
+		<div class="col-sm-2">      
+			<label>Moneda:  </label> 
+		</div>
+		<div class="col-sm-2">
+      {{moneda}}
+		</div>
+
+	</div>
+
+	<div class="row">
+		<div class="col-sm-2">      
+			<label>Sub-Total:  </label> 
+		</div>
+		<div class="col-sm-2">
+      {{subtotal}}      
+		</div>
+	</div>
+
+
+	<div class="row">
+		<div class="col-sm-2">      
+			<label>Descuentos:  </label> 
+		</div>
+		<div class="col-sm-2">
+      {{descuento}}      
+		</div>
+	</div>
+
+
+  {{/$}}
+
+	<div class="row">
+		<div class="col-sm-2">      
+			<label>***  Impuestos ***</label> 
+		</div>
+
+	</div>
+
+ {{#impuestos}}
+
+
+ {{#traslados}} 
+ {{#traslado}}
+  {{#$}} 
+	<div class="row"> 
+		<div class="col-sm-2">       
+			<label>{{impuesto}} - {{tipofactor}} - {{tasaocuota}}:  </label>  
+		</div> 
+		<div class="col-sm-2"> 
+       {{importe}}       
+		</div> 
+	</div> 
+   {{/$}} 
+   {{/traslado}} 
+   {{/traslados}} 
+
+{{#$}}
+	<div class="row">
+		<div class="col-sm-2">
+			<label>Total de Trasladados :</label>
+		</div>
+		<div class="col-sm-2">
+		{{totalimpuestostrasladados}} 
+		</div>
+	</div> 
+ {{/$}} 
+
+
+
+
+   {{#retenciones}} 
+ {{#retencion}}
+  {{#$}} 
+	<div class="row"> 
+		<div class="col-sm-2">       
+			<label>{{impuesto}} :  </label>  
+		</div> 
+		<div class="col-sm-2"> 
+       {{importe}}       
+		</div> 
+	</div> 
+   {{/$}} 
+   {{/retencion}} 
+   {{/retenciones}} 
+
+   {{#$}}
+	<div class="row">
+		<div class="col-sm-2">
+			<label>Total de Retenciones :</label>
+		</div>
+		<div class="col-sm-2">
+		{{totalimpuestosretenidos}} 
+		</div>
+	</div> 
+ {{/$}} 
+
+
+ {{/impuestos}}
+
+
+  {{#$}} 
+	<div class="row"> 
+		<div class="col-sm-2">       
+			<label>Total:  </label>  
+		</div> 
+
+		<div class="col-sm-2"> 
+       {{total}} 
+		</div> 
+	</div> 
+{{/$}} 
+
+
+</div>
+
+
+
+{{#complemento}}
+
+{{#comercioexterior}}
+<div class="container">
+	<h2>Complemento Comercio Exterior</h2>
+
+	<div class="container">
+	{{#$}}
+		<div class="row"> 
+			<div class="col-sm-2">       
+				<label>Version:  </label>  
+			</div> 
+
+			<div class="col-sm-2"> 
+       {{version}} 
+			</div> 
+		</div>
+
+
+		<div class="row"> 
+			<div class="col-sm-2">       
+				<label>Tipo de Operación:  </label>  
+			</div> 
+
+			<div class="col-sm-2"> 
+       {{tipooperacion}} 
+			</div> 
+		</div> 
+
+		<div class="row"> 
+			<div class="col-sm-2">       
+				<label>Clave de pedimento:  </label>  
+			</div> 
+
+			<div class="col-sm-2"> 
+       {{clavedepedimento}} 
+			</div> 
+		</div> 
+
+
+		<div class="row"> 
+			<div class="col-sm-2">       
+				<label>Certificado de Origen:  </label>  
+			</div> 
+
+			<div class="col-sm-2"> 
+       {{certificadoorigen}} 
+			</div> 
+		</div> 
+
+
+		<div class="row"> 
+			<div class="col-sm-2">       
+				<label>Incoterm:  </label>  
+			</div> 
+
+			<div class="col-sm-2"> 
+       {{incoterm}} 
+			</div> 
+		</div> 
+
+		<div class="row"> 
+			<div class="col-sm-2">       
+				<label>Subdivisión:  </label>  
+			</div> 
+
+			<div class="col-sm-2"> 
+       {{subdivision}} 
+			</div> 
+		</div> 
+
+		<div class="row"> 
+			<div class="col-sm-2">       
+				<label>Tipo Cambio USD:  </label>  
+			</div> 
+
+			<div class="col-sm-2"> 
+       {{tipocambiousd}} 
+			</div> 
+		</div> 
+
+		<div class="row"> 
+			<div class="col-sm-2">       
+				<label>Total USD:  </label>  
+			</div> 
+
+			<div class="col-sm-2"> 
+       {{totalusd}} 
+			</div> 
+		</div> 
+	{{/$}}
+
+	{{#emisor}}
+		<h3>CCE Emisor</h3>
+	{{#domicilio}}
+	{{#$}}
+		<div class="row"> 
+			<div class="col-sm-2">       
+				<label>Calle:  </label>  
+			</div> 
+
+			<div class="col-sm-2"> 
+       {{calle}} 
+			</div> 
+		</div> 
+
+		<div class="row"> 
+			<div class="col-sm-2">       
+				<label>Colonia:  </label>  
+			</div> 
+
+			<div class="col-sm-2"> 
+       {{colonia}} 
+			</div> 
+		</div> 
+		<div class="row"> 
+			<div class="col-sm-2">       
+				<label>Municipio:  </label>  
+			</div> 
+
+			<div class="col-sm-2"> 
+       {{municipio}} 
+			</div> 
+		</div> 
+		<div class="row"> 
+			<div class="col-sm-2">       
+				<label>Estado:  </label>  
+			</div> 
+
+			<div class="col-sm-2"> 
+       {{estado}} 
+			</div> 
+		</div> 
+		<div class="row"> 
+			<div class="col-sm-2">       
+				<label>País:  </label>  
+			</div> 
+
+			<div class="col-sm-2"> 
+       {{pais}} 
+			</div> 
+		</div> 
+		<div class="row"> 
+			<div class="col-sm-2">       
+				<label>Código Postal:  </label>  
+			</div> 
+
+			<div class="col-sm-2"> 
+       {{codigopostal}} 
+			</div> 
+		</div> 
+	{{/$}}
+	{{/domicilio}}
+	{{/emisor}}
+
+	{{#propietario}}
+	{{#$}}
+		<h3>CCE Propietario</h3>
+		<div class="row"> 
+			<div class="col-sm-2">       
+				<label>NumRegIdTrib:  </label>  
+			</div> 
+
+			<div class="col-sm-2"> 
+       {{numregidtrib}} 
+			</div> 
+		</div> 
+
+		<div class="row"> 
+			<div class="col-sm-2">       
+				<label>Residencia Fiscal:  </label>  
+			</div> 
+
+			<div class="col-sm-2"> 
+       {{residenciafiscal}} 
+			</div> 
+		</div> 
+	{{/$}}
+	{{/propietario}}
+
+
+	{{#receptor}}
+	{{#domicilio}}
+	{{#$}}
+		<h3>CCE Domicilio del Receptor</h3>
+		<div class="row"> 
+			<div class="col-sm-2">       
+				<label>Calle:  </label>  
+			</div> 
+			<div class="col-sm-2"> 
+       {{calle}} 
+			</div> 
+		</div> 
+
+		<div class="row"> 
+			<div class="col-sm-2">       
+				<label>Numero Exterior:  </label>  
+			</div> 
+			<div class="col-sm-2"> 
+       {{numeroexterior}} 
+			</div> 
+		</div> 
+
+		<div class="row"> 
+			<div class="col-sm-2">       
+				<label>Estado:  </label>  
+			</div> 
+			<div class="col-sm-2"> 
+       {{estado}} 
+			</div> 
+		</div> 
+
+		<div class="row"> 
+			<div class="col-sm-2">       
+				<label>País:  </label>  
+			</div> 
+			<div class="col-sm-2"> 
+       {{pais}} 
+			</div> 
+		</div> 
+
+		<div class="row"> 
+			<div class="col-sm-2">       
+				<label>Código postal:  </label>  
+			</div> 
+			<div class="col-sm-2"> 
+       {{codigopostal}} 
+			</div> 
+		</div> 
+	{{/$}}
+	{{/domicilio}}
+	{{/receptor}}
+
+
+	{{#destinatario}}
+		<h3>CCE Destinatario</h3>
+	{{#$}}
+		<div class="row"> 
+			<div class="col-sm-2">       
+				<label>NumRegIdTrib:  </label>  
+			</div> 
+			<div class="col-sm-2"> 
+       {{numregidtrib}} 
+			</div> 
+		</div> 
+
+		<div class="row"> 
+			<div class="col-sm-2">       
+				<label>Nombre:  </label>  
+			</div> 
+			<div class="col-sm-4"> 
+       {{nombre}} 
+			</div> 
+		</div> 
+	{{/$}}
+
+	{{#domicilio}}	
+	{{#$}}
+		<div class="row"> 
+			<div class="col-sm-2">       
+				<label>Calle:  </label>  
+			</div> 
+
+			<div class="col-sm-2"> 
+       {{calle}} 
+			</div> 
+		</div> 
+
+		<div class="row"> 
+			<div class="col-sm-2">       
+				<label>Colonia:  </label>  
+			</div> 
+
+			<div class="col-sm-2"> 
+       {{colonia}} 
+			</div> 
+		</div> 
+		<div class="row"> 
+			<div class="col-sm-2">       
+				<label>Municipio:  </label>  
+			</div> 
+
+			<div class="col-sm-2"> 
+       {{municipio}} 
+			</div> 
+		</div> 
+		<div class="row"> 
+			<div class="col-sm-2">       
+				<label>Estado:  </label>  
+			</div> 
+
+			<div class="col-sm-2"> 
+       {{estado}} 
+			</div> 
+		</div> 
+		<div class="row"> 
+			<div class="col-sm-2">       
+				<label>País:  </label>  
+			</div> 
+
+			<div class="col-sm-2"> 
+       {{pais}} 
+			</div> 
+		</div> 
+		<div class="row"> 
+			<div class="col-sm-2">       
+				<label>Código Postal:  </label>  
+			</div> 
+
+			<div class="col-sm-2"> 
+       {{codigopostal}} 
+			</div> 
+		</div> 
+
+	{{/$}}
+	{{/domicilio}}
+
+	{{/destinatario}}
+
+
+		<div class="container">
+			<table class="table table-bordered">
+				<tr>
+					<th>
+	NoIdentificacion
+					</th>
+					<th> 
+	FraccionArancelaria
+					</th>
+					<th> 
+	CantidadAduana
+					</th>
+					<th> 
+	UnidadAduana
+					</th>
+					<th> 
+	ValorUnitarioAduana
+					</th>
+					<th> 
+	ValorDolares
+					</th>
+				</tr>
+	{{#mercancias}}	
+	{{#mercancia}}
+	{{#$}}
+				<tr>
+					<td>
+	{{noidentificacion}}
+					</td>
+					<td> 
+	{{fraccionarancelaria}}
+					</td>
+					<td> 
+	{{cantidadaduana}}
+					</td>
+					<td> 
+	{{unidadaduana}}
+					</td>
+					<td> 
+	{{valorunitarioaduana}}
+					</td>
+					<td> 
+	{{valordolares}}
+					</td>
+				</tr>
+	{{/$}}
+	{{/mercancia}}
+	{{/mercancias}}
+
+			</table>
+
+
+
+
+		</div>
+	</div>
+{{/comercioexterior}}
+{{/complemento}}
+
+
+{{/comprobante}}
+
+
+
+
+
+	

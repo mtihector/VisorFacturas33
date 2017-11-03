@@ -1,0 +1,12 @@
+{
+  "name": "VisorFacturas",
+  "version": "0.1.0",
+  "main": "main.js",
+  "dependencies": {
+    "fs": "0.0.2",
+    "xml2js": "^0.4.17"
+  },
+  "devDependencies": {
+    "electron-prebuilt": "^1.2.6"
+  }
+}

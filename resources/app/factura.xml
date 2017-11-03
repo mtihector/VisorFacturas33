@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cfdi:Comprobante xmlns:cfdi="http://www.sat.gob.mx/cfd/3" xmlns:iwcfd="http://interware.com.mx/iwcfd/metlife" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" folio="5194300" sello="CvQ0EBOgHe3xJc29i4463EgfR9aXpS1bAhgewqZpaeOoTZqUpv8WDbtQGIXCjA13ZNCeb4ajZUiHTLuZMpF3iT/LYXot5aTsVR9mqcHCE5BZD7qTS+e9QZsV3TXcb3U3teGAvWLkQeLWK8lyZDNcxHNSN84E2fBcIatra1yuBqA=" total="5156.06" Moneda="PESOS" formaDePago="Pago hecho en una sola exhibición" certificado="MIIEYDCCA0igAwIBAgIUMDAwMDEwMDAwMDAzMDEyODI2ODcwDQYJKoZIhvcNAQEFBQAwggGKMTgwNgYDVQQDDC9BLkMuIGRlbCBTZXJ2aWNpbyBkZSBBZG1pbmlzdHJhY2nDs24gVHJpYnV0YXJpYTEvMC0GA1UECgwmU2VydmljaW8gZGUgQWRtaW5pc3RyYWNpw7NuIFRyaWJ1dGFyaWExODA2BgNVBAsML0FkbWluaXN0cmFjacOzbiBkZSBTZWd1cmlkYWQgZGUgbGEgSW5mb3JtYWNpw7NuMR8wHQYJKoZIhvcNAQkBFhBhY29kc0BzYXQuZ29iLm14MSYwJAYDVQQJDB1Bdi4gSGlkYWxnbyA3NywgQ29sLiBHdWVycmVybzEOMAwGA1UEEQwFMDYzMDAxCzAJBgNVBAYTAk1YMRkwFwYDVQQIDBBEaXN0cml0byBGZWRlcmFsMRQwEgYDVQQHDAtDdWF1aHTDqW1vYzEVMBMGA1UELRMMU0FUOTcwNzAxTk4zMTUwMwYJKoZIhvcNAQkCDCZSZXNwb25zYWJsZTogQ2xhdWRpYSBDb3ZhcnJ1YmlhcyBPY2hvYTAeFw0xMzExMTIxNjAyNDNaFw0xNzExMTIxNjAyNDNaMIGsMRowGAYDVQQDExFNRVRMSUZFIE1FWElDTyBTQTEaMBgGA1UEKRMRTUVUTElGRSBNRVhJQ08gU0ExGjAYBgNVBAoTEU1FVExJRkUgTUVYSUNPIFNBMSUwIwYDVQQtExxNTUU5MjA0MjdFTTMgLyBST0JDNjEwNzE2RFIwMR4wHAYDVQQFExUgLyBST0JDNjEwNzE2TURGSk5SMDkxDzANBgNVBAsTBk1hdHJpejCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAgxRVJtCLQT9PNXmZIiP8EdpG6yJBMoluyJisMTCFBwDv/Mc52cvAVcJDdX9HlSPNzUQDA25RWoxfncEcGd8CGl9TUfyOvyp3AeZUYb0PUrQ2bxg9p7V+8kCVh2VMzohhSZMFSlGiXpbfju4Omq8jW4EfaX+qkS0Ybq8k9d10HLsCAwEAAaMdMBswDAYDVR0TAQH/BAIwADALBgNVHQ8EBAMCBsAwDQYJKoZIhvcNAQEFBQADggEBAMFqkKGT6DFvASfTBDc5sccbLVL5GLxJxVlj+74b8qYp9G3xaZDuvlYfpmiDfewLwfi4cIfwI2yKSFKkKffAoNwpHE00XbGebS8yPrJSPsPBsL8ceHQyWN29U69M1vCbSyuYe3e+8M8DL98doe8h/+gEFpIy+mQNDHqz11TVFMzv4bJ3dNgVYuxP4cMptw7UfF1hvnHP1iG2vXQKwe5fxCaXPixac3IN9ckjwsT/7X6+JZenTuW4QK1/GrVsNXg4frKWlLZPQ0yKELv7JgLuElbh8EVabnH/VVNkAc7wePNXaMGBAtyKqDEkejSaRP7cn5FYgrZkJjF/AsTtkt2QXzk=" noCertificado="00001000000301282687" subTotal="4444.88" version="3.2" NumCtaPago="1810" metodoDePago="TARJETA DE CREDITO" tipoDeComprobante="ingreso" LugarExpedicion="México, D.F." TipoCambio="1.0" xsi:schemaLocation="http://www.sat.gob.mx/cfd/3 http://www.sat.gob.mx/sitio_internet/cfd/3/cfdv32.xsd" fecha="2015-05-25T13:10:21">
+	<cfdi:Emisor nombre="METLIFE MÉXICO, S.A." rfc="MME920427EM3">
+		<cfdi:DomicilioFiscal calle="Blvd. Manuel Ávila Camacho" codigoPostal="11000" colonia="Lomas de Chapultepec" estado="D.F." municipio="Miguel Hidalgo" noExterior="32" noInterior="Pisos SKL, 14 a 20 y PH" pais="México"/>
+		<cfdi:ExpedidoEn calle="Blvd. Manuel Ávila Camacho" codigoPostal="11000" colonia="Col.Lomas de Chapultepec" estado="D.F." municipio="Miguel Hidalgo" noExterior="32" noInterior="Piso SKL 14 al 20 PH" pais="México"/>
+		<cfdi:RegimenFiscal Regimen="Régimen General de Ley Personas Morales"/>
+	</cfdi:Emisor>
+	<cfdi:Receptor nombre="HECTOR MEDINA DE LA GARZA" rfc="MEGH790203IV1">
+		<cfdi:Domicilio calle="BAHIA DE SAN BLAS 112, LOS SAUCES, AGUASCALIENTES, AGS, 20016" pais="México"/>
+	</cfdi:Receptor>
+	<cfdi:Conceptos>
+		<cfdi:Concepto cantidad="1" descripcion="PRIMA NETA" importe="3923.14" unidad="SERVICIO" valorUnitario="3923.14"/>
+		<cfdi:Concepto cantidad="1" descripcion="GASTOS DE EXPEDICION" importe="521.74" unidad="SERVICIO" valorUnitario="521.74"/>
+	</cfdi:Conceptos>
+	<cfdi:Impuestos totalImpuestosTrasladados="711.18">
+		<cfdi:Traslados>
+			<cfdi:Traslado importe="711.18" impuesto="IVA" tasa="16.00"/>
+		</cfdi:Traslados>
+	</cfdi:Impuestos>
+	<cfdi:Complemento>
+		<tfd:TimbreFiscalDigital xmlns:tfd="http://www.sat.gob.mx/TimbreFiscalDigital" version="1.0" UUID="5208BDF7-C27D-423C-AFDC-855FA27F6E4C" FechaTimbrado="2015-05-25T14:24:40" selloCFD="CvQ0EBOgHe3xJc29i4463EgfR9aXpS1bAhgewqZpaeOoTZqUpv8WDbtQGIXCjA13ZNCeb4ajZUiHTLuZMpF3iT/LYXot5aTsVR9mqcHCE5BZD7qTS+e9QZsV3TXcb3U3teGAvWLkQeLWK8lyZDNcxHNSN84E2fBcIatra1yuBqA=" noCertificadoSAT="00001000000202865018" selloSAT="VfEICluSO2YB8pTgFT0LosIYFMJWNBFFniImTero8LL6NaPyQbUlrjfpYYSc/7iz1gwi0Wwt5uSpcb2XD5zfYQt1r3IrPAoiAd9abChqN9vjc6f1UfY8ms2Y90idXzkFVsBr0n4kgVWXptnD5h7vlAuqQMXNT2q1VYsVuDGmWSk=" xsi:schemaLocation="http://www.sat.gob.mx/TimbreFiscalDigital http://www.sat.gob.mx/TimbreFiscalDigital/TimbreFiscalDigital.xsd"/>
+	</cfdi:Complemento>
+</cfdi:Comprobante>

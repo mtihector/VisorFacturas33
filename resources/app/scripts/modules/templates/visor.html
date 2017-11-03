@@ -1,0 +1,350 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+	<div class="container" >
+		<button id="btnopen" class="btn btn-primary">Abrir otra factura</button>
+		<button id="btnPrint" class="btn btn-primary">Imprimir</button>
+	</div>
+</nav>
+
+<div class="container" style="margin-top:40px">
+	<h1>Generales Version 3.2  </h1>
+{{#comprobante}}
+	<div class="container">
+
+{{#emisor}}
+{{#$}} 
+		<h1>Emisor: {{nombre}}</h1>
+
+		<div class="row">
+			<div class="col-lg-12">
+				<label>RFC:</label>{{rfc}}
+			</div>
+		</div>
+
+{{/$}}
+
+{{#domiciliofiscal}}
+{{#$}}
+		<div class="row">
+			<div class="col-lg-12">
+				<label>Domicilio Fiscal:</label>
+				<span>{{calle}} {{nointerior}} {{noexterior}} {{colonia}} {{municipio}} {{estado}} {{pais}} </span>
+				<label>C.P.</label>
+				<span>{{codigopostal}}</span>
+			</div>
+		</div>
+
+{{/$}}
+{{/domiciliofiscal}}
+
+
+
+
+{{#expedidoen}}
+{{#$}}
+		<div class="row">
+			<div class="col-lg-12">
+				<label>Expedido en:</label>
+				<span>{{calle}} {{nointerior}} {{noexterior}} {{colonia}} {{municipio}} {{estado}} {{pais}} </span>
+				<label>C.P.</label>
+				<span>{{codigopostal}}</span>
+			</div>
+		</div>
+
+{{/$}}
+{{/expedidoen}}
+
+
+{{#regimenfiscal}}
+{{#$}}
+		<div class="row">
+			<div class="col-lg-12">
+				<label>Regimen fiscal:</label>
+				<span>{{regimen}}</span>
+			</div>
+		</div>
+
+{{/$}}
+{{/regimenfiscal}}
+
+
+{{/emisor}}
+	</div>
+
+
+
+{{#receptor}}
+
+	<div class="container">
+  {{#$}} 
+		<h1>Receptor: {{nombre}}</h1>
+
+		<div class="row">
+			<div class="col-lg-12">
+				<label>RFC:</label>{{rfc}}
+			</div>
+		</div>
+
+  {{/$}}
+
+
+
+  {{#domicilio}}
+  {{#$}}
+		<div class="row">
+			<div class="col-lg-12">
+				<label>Domicilio Fiscal:</label>
+				<span>{{calle}} {{pais}} </span>
+			</div>
+		</div>
+
+  {{/$}}
+  {{/domicilio}}
+
+	</div>
+
+{{/receptor}}
+
+
+{{#complemento}}
+	<div class="container">
+  {{#timbrefiscaldigital}}
+  {{#$}}
+
+		<h2>Timbre</h2>
+		<div class="row">
+			<div class="col-lg-12">
+				<label>UUID:</label> {{uuid}}
+			</div>
+			<div class="col-lg-12">
+				<label>No. Certificado SAT:</label> {{nocertificadosat}}
+			</div>
+			<div class="col-lg-12">
+				<label>Fecha Timbrado:</label> {{fechatimbrado}}
+			</div>
+
+
+		</div>
+
+
+  {{/$}}
+
+  {{/timbrefiscaldigital}}
+
+	</div>
+
+{{/complemento}}
+
+
+{{#$}}
+	<div class="container">
+
+		<h2>Forma de Pago</h2>
+		<div class="row">
+			<div class="col-lg-12">
+				<label>Forma de Pago :</label> {{formadepago}}	  
+			</div>
+
+			<div class="col-lg-12">
+				<label>Metodo de Pago :</label> {{metododepago}}	  
+			</div>
+
+		</div>
+	</div>
+
+{{/$}}
+
+
+
+	<div class="container">
+		<table class="table table-bordered">
+			<tr>
+				<th>
+	Descripcion
+				</th>
+				<th> 
+	Cantidad
+				</th>
+				<th> 
+	Unidad
+				</th>
+				<th> 
+	Unitario
+				</th>
+				<th> 
+	Importe
+				</th>
+
+
+			</tr>
+
+    {{#conceptos}}
+
+    {{#concepto}}
+    {{#$}}
+
+			<tr>
+
+
+				<td > 
+	{{descripcion}}
+				</td>
+				<td> 
+	{{cantidad}}
+				</td>
+				<td> 
+	{{unidad}}
+				</td>
+				<td> 
+	{{valorunitario}}
+				</td>
+				<td> 
+	{{importe}}
+				</td>
+
+			</tr>
+
+
+    {{/$}}
+    {{/concepto}}
+
+    {{/conceptos}}
+
+
+		</table>
+	</div>
+
+
+
+	<div class="container">
+
+  {{#$}}
+
+		<div class="row">
+			<div class="col-sm-2">      
+				<label>Sub-Total:  </label> 
+			</div>
+			<div class="col-sm-2">
+      {{subtotal}}      
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-2">      
+				<label>Tipo Cambio:  </label>
+			</div>
+			<div class="col-sm-2">
+      {{tipocambio}}      
+			</div>
+
+		</div>
+
+		<div class="row">
+			<div class="col-sm-2">      
+				<label>Moneda:  </label> 
+			</div>
+			<div class="col-sm-2">
+      {{moneda}}
+			</div>
+
+		</div>
+  {{/$}}
+
+
+  {{#impuestos}}
+
+
+
+
+
+
+  {{#traslados}}
+  {{#traslado}}
+  {{#$}}
+		<div class="row">
+			<div class="col-sm-2">      
+				<label>{{impuesto}} - {{tasa}}:  </label> 
+			</div>
+			<div class="col-sm-2">
+      {{importe}}      
+			</div>
+		</div>
+  {{/$}}
+  {{/traslado}}
+  {{/traslados}}
+
+  {{#$}}
+		<div class="row">
+			<div class="col-sm-2">      
+				<label>Total Impuestos trasladados:  </label> 
+			</div>
+			<div class="col-sm-2">
+      {{totalimpuestostrasladados}}      
+			</div>
+
+		</div>
+
+  {{/$}}
+
+
+
+   {{#retenciones}}
+  {{#retencion}}
+  {{#$}}
+		<div class="row">
+			<div class="col-sm-2">      
+				<label>Retenciòn - {{impuesto}} :  </label> 
+			</div>
+			<div class="col-sm-2">
+      {{importe}}      
+			</div>
+		</div>
+  {{/$}}
+  {{/retencion}}
+  {{/retenciones}}
+
+
+
+  {{#$}}
+		<div class="row">
+			<div class="col-sm-2">      
+				<label>Total Impuestos Retenidos:  </label> 
+			</div>
+			<div class="col-sm-2">
+      {{totalimpuestosretenidos}}      
+			</div>
+
+		</div>
+
+  {{/$}}
+  {{/impuestos}}
+
+
+
+  {{#$}}
+		<div class="row">
+			<div class="col-sm-2">      
+				<label>Total:  </label> 
+			</div>
+
+			<div class="col-sm-2">
+      {{total}}
+			</div>
+		</div>
+
+
+  {{/$}}
+
+
+
+	</div>
+
+
+
+
+{{/comprobante}}
+
+</div> 
+
+
+
+
